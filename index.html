@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template RC</title>
-    <!-- TODO: link google fonts here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;500;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
@@ -13,15 +17,11 @@
 <body>
     <div id="es-rc">
         <div id="es-rc-content">
-            <div class="es-kv">
-                <p class="es-section-title">KV Section title</p>
-                <img class="es-kv__img--mobile" src="./images/example-mobile.png" alt="placeholder mobile">
-                <img class="es-kv__img--desktop" src="./images/example-dekstop.png" alt="placeholder desktop">
+
+            <div class="es-footer">
+                <img src="./images/logo.png" alt="Logo Maybelline New York" class="es-footer__logo">
             </div>
-            <div class="es-section">
-                <p class="es-section-title">Section title</p>
-                <button class="es-section__button">Click</button>
-            </div>
+
             <div class="es-slider es-section">
                 <p class="es-section-title">Slider</p>
                 <!-- Slider main container -->
@@ -50,6 +50,62 @@
                     <div class="es-swiper-scrollbar"></div>
                 </div>
             </div>
+
+            <div class="es-cross">
+                <div class="es-cross__header">
+                    <p class="es-section-title">Inne produkty, <span class="es-section-title--bold">które mogą ci się
+                            spodobać</span></p>
+                </div>
+
+                <div class="es-cross__container">
+                    <div class="es-cross__single">
+                        <a href="#1" target="_blank">
+                            <div class="es-cross__packshot">
+                                <img src="./images/super-stay.png" alt="" class="es-cross__img">
+                            </div>
+                        </a>
+                        <p class="es-cross__name">Super stay lumi matte</p>
+                        <p class="es-cross__desc">
+                            Lekki, długotrwały podkład, który zapewni Ci nieskazitelne krycie aż do 30 godzin! (test
+                            konsumencki, 120 osób). Odkryj efekt satynowego matu i zapomnij o efekcie maski.
+                        </p>
+                        <a href="#1" class="es-cross__link">Kup teraz</a>
+                    </div>
+                    <div class="es-cross__single">
+                        <a href="#2" target="_blank">
+                            <div class="es-cross__packshot">
+                                <img src="./images/vinyl-ink.png" alt="" class="es-cross__img">
+                            </div>
+                        </a>
+                        <p class="es-cross__name">Vinyl ink</p>
+                        <p class="es-cross__desc">
+                            Płynna szminka oferuje długotrwały połysk. Intensywny kolor utrzymuje się aż do 16h (test
+                            konsumencki (samoocena)), nie rozmazuje się i&nbsp;nie ściera.
+                        </p>
+                        <a href="#2" class="es-cross__link">Kup teraz</a>
+                    </div>
+                    <div class="es-cross__single">
+                        <a href="#3" target="_blank">
+                            <div class="es-cross__packshot">
+                                <img src="./images/grippy.png" alt="" class="es-cross__img">
+                            </div>
+                        </a>
+                        <p class="es-cross__name">Gripy serum</p>
+                        <p class="es-cross__desc">
+                            Baza utrwalająca makijaż do 24h (test instrumentalny).
+                        </p>
+
+                        <a href="#3" class="es-cross__link">Kup teraz</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="es-footer">
+                <img src="./images/logo.png" alt="Logo Maybelline New York" class="es-footer__logo">
+            </div>
+
         </div>
     </div>
     <script src="./scripts/click.js"></script>
