@@ -28,17 +28,33 @@ $color-accent-2: #96756e;
 $gradient: linear-gradient(180deg, #dcbfb9 0%, #f4d0b8 41%, #96756e 100%);
 $text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
 
+$transition: all 0.3s;
+$scale: 1.05;
+
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
 $media-breakpoint-lg: 992px;
 $media-breakpoint-xl: 1200px;
+
+@mixin barlow-bold {
+  font-family: $text-secondary;
+  font-weight: $fw-bold;
+}
+
+@mixin header {
+  @include barlow-bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
 
 #es-rc #es-rc-content {
   font-family: $text-main;
   font-size: $fs-base;
   font-weight: $fw-regular;
   line-height: 1.2;
-  color: $color-main;
+  color: $color-bg;
+  text-shadow: $text-shadow;
   background-color: $color-bg;
   max-width: 1300px;
   margin: 0 auto;
@@ -101,18 +117,13 @@ $media-breakpoint-xl: 1200px;
 
   .es-kv {
     &__headline {
-      font-family: $text-secondary;
+      @include header;
       font-size: clamp(42px, 28.979px + 3.617vw, 76px);
-      font-weight: $fw-bold;
-      line-height: 100%;
-      text-align: center;
+      line-height: 1;
       padding-block: $px-M;
-      text-transform: uppercase;
-      text-wrap: balance;
       border-top: 16px solid $color-main;
       border-bottom: 16px solid $color-main;
       background-color: $color-main;
-      color: $color-bg;
     }
     @container es-rc-content (min-width: 475px) {
       position: relative;
@@ -136,13 +147,88 @@ $media-breakpoint-xl: 1200px;
   }
 
   .es-results {
-    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &__left {
+      padding-inline: $px-L;
+    }
+    &__right {
+      padding: $px-M;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: $px-L;
+      &__headline {
+        @include header;
+        line-height: 1;
+        &--top {
+          font-size: clamp(32px, 8.24px + 3.52vw, 54px);
+          margin-bottom: $px-M;
+        }
+        &--bottom {
+          font-size: clamp(1.259375rem, 0.3245rem + 2.216vw, 2.125rem);
+        }
+      }
+      &__ba {
+        &-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        &-single {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &__img {
+            transition: $transition;
+            &:hover {
+              transform: scale($scale);
+            }
+            &-wrapper {
+              overflow: hidden;
+            }
+          }
+          &__text {
+            @include header;
+            font-weight: $fw-medium;
+            padding: 10px;
+            width: 100%;
+            font-size: calc(1.2 * $fs-base);
+            &--before {
+              background-color: $color-accent;
+            }
+            &--after {
+              background-color: $color-bg;
+              color: $color-accent;
+            }
+          }
+        }
+      }
+    }
+    @container es-rc-content (min-width: 550px) {
+      &__right {
+        &__ba-wrapper {
+          flex-direction: row;
+        }
+      }
+    }
+    @container es-rc-content (min-width: 660px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__left,
+      &__right {
+        width: 50%;
+      }
+    }
   }
 
   .es-cross {
     padding: 60px 16px;
     background: $gradient;
-    color: $color-bg;
 
     &__container {
       display: flex;
@@ -158,7 +244,6 @@ $media-breakpoint-xl: 1200px;
       display: flex;
       align-items: center;
       flex-flow: column;
-      text-shadow: $text-shadow;
     }
 
     &__single:hover {
