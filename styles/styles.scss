@@ -26,6 +26,11 @@ $color-accent: #b79f9b;
 $color-accent-2: #96756e;
 
 $gradient: linear-gradient(180deg, #dcbfb9 0%, #f4d0b8 41%, #96756e 100%);
+$gradient-main-bg: linear-gradient(
+  180deg,
+  rgba(201, 179, 179, 1) 0%,
+  rgba(135, 119, 120, 1) 100%
+);
 $text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
 
 $transition: all 0.3s;
@@ -56,8 +61,10 @@ $media-breakpoint-xl: 1200px;
   line-height: 1.2;
   color: $color-bg;
   text-shadow: $text-shadow;
-  background-color: $color-bg;
+  background-color: $color-main;
+  background: $gradient-main-bg;
   max-width: 1300px;
+  overflow: hidden;
   margin: 0 auto;
   container: es-rc-content / inline-size;
 
@@ -245,7 +252,7 @@ $media-breakpoint-xl: 1200px;
       display: flex;
       flex-direction: column;
       gap: $px-S;
-    
+
       &:hover {
         .es-features__feature__img {
           transform: scale($scale-2);
@@ -321,6 +328,46 @@ $media-breakpoint-xl: 1200px;
           }
         }
       }
+    }
+  }
+
+  .es-lift {
+    text-align: center;
+
+    &__text {
+      padding: $px-XL;
+      display: flex;
+      flex-direction: column;
+      gap: $px-S;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__headline {
+      @include header;
+      font-size: clamp(3.25rem, 2.2926rem + 4.2553vw, 5.75rem);
+      line-height: 1;
+    }
+    @container es-rc-content (max-width: 649px) {
+      background: $gradient !important;
+    }
+    @container es-rc-content (min-width: 650px) {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 13 / 6;
+      &__bg {
+        display: none;
+      }
+      &__text {
+        width: 50%;
+        height: 100%;
+      }
+    }
+    // Some mobile devices will not support the background-attachment: fixed;
+    // https://www.w3schools.com/howto/howto_css_parallax.asp
+    @media only screen and (max-device-width: 1366px) {
+      background-attachment: scroll;
     }
   }
 
