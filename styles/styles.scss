@@ -10,7 +10,7 @@ $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-$fs-base: 16px;
+$fs-base: 18px;
 $fs-header: 32px;
 $fs-header-lg: 48px;
 
@@ -30,6 +30,7 @@ $text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
 
 $transition: all 0.3s;
 $scale: 1.05;
+$scale-2: 1.2;
 
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
@@ -222,6 +223,103 @@ $media-breakpoint-xl: 1200px;
       &__left,
       &__right {
         width: 50%;
+      }
+      &__right__ba-single__text {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .es-features {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: $px-M;
+    display: flex;
+    flex-direction: column;
+    gap: $px-XL;
+    .es-desktop {
+      display: none;
+    }
+    &__feature {
+      display: flex;
+      flex-direction: column;
+      gap: $px-S;
+    
+      &:hover {
+        .es-features__feature__img {
+          transform: scale($scale-2);
+        }
+      }
+      &__img {
+        transition: $transition;
+      }
+      &__title {
+        @include header;
+        font-size: clamp(24px, 17.106px + 1.9149vw, 42px);
+      }
+      &__desc {
+        text-align: center;
+        text-wrap: balance;
+        font-weight: $fw-bold;
+        line-height: 1.2;
+        font-size: clamp(16px, 14.469px + 0.4255vw, 20px);
+      }
+    }
+    @container es-rc-content (min-width: 660px) {
+      position: relative;
+      padding-top: 0;
+
+      .es-desktop {
+        display: block;
+      }
+      &__feature {
+        position: absolute;
+        width: max-content;
+        &--1 {
+          top: 7%;
+          right: 4%;
+        }
+        &--2 {
+          bottom: 10%;
+          left: 4%;
+        }
+        &__img {
+          max-width: 44px;
+          max-height: 44px;
+          margin: unset;
+          width: 18%;
+          &--1 {
+            margin-top: -6%;
+            margin-left: 7%;
+          }
+          &--2 {
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    @container es-rc-content (min-width: 880px) {
+      padding: $px-XL;
+      padding-top: 0;
+      &__feature {
+        gap: $px-M;
+        &--1 {
+          top: 8%;
+          right: 6%;
+        }
+        &--2 {
+          left: 8%;
+        }
+        &__img {
+          max-width: 55px;
+          max-height: 67px;
+          &--1 {
+            margin-top: -4%;
+            margin-left: 9%;
+          }
+        }
       }
     }
   }
