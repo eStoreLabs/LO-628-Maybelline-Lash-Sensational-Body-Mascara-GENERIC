@@ -48,6 +48,56 @@
     font-size: 48px;
   }
 }
+#es-rc #es-rc-content .es-footer {
+  background-color: #000000;
+}
+#es-rc #es-rc-content .es-footer__logo {
+  max-width: 200px;
+  padding: 16px;
+}
+@container es-rc-content (min-width: 660px) {
+  #es-rc #es-rc-content .es-footer__logo {
+    max-width: 250px;
+    padding: 20px;
+  }
+}
+#es-rc #es-rc-content .es-kv__headline {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(42px, 28.979px + 3.617vw, 76px);
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+  padding-block: 16px;
+  text-transform: uppercase;
+  text-wrap: balance;
+  border-top: 16px solid #000000;
+  border-bottom: 16px solid #000000;
+  background-color: #000000;
+  color: #ffffff;
+}
+@container es-rc-content (min-width: 475px) {
+  #es-rc #es-rc-content .es-kv {
+    position: relative;
+  }
+  #es-rc #es-rc-content .es-kv__headline {
+    position: absolute;
+    border: unset;
+    background: unset;
+    text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
+    top: 1%;
+    left: 48%;
+  }
+}
+@container es-rc-content (min-width: 660px) {
+  #es-rc #es-rc-content .es-kv {
+    display: flex;
+  }
+  #es-rc #es-rc-content .es-kv__headline {
+    top: 18%;
+    left: 30%;
+    font-size: clamp(40px, 1.12px + 5.76vw, 76px);
+  }
+}
 #es-rc #es-rc-content .es-cross {
   padding: 60px 16px;
   background: linear-gradient(180deg, #dcbfb9 0%, #f4d0b8 41%, #96756e 100%);
@@ -66,7 +116,7 @@
   display: flex;
   align-items: center;
   flex-flow: column;
-  text-shadow: 0px 4px 28.3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.4);
 }
 #es-rc #es-rc-content .es-cross__single:hover .es-cross__img {
   transform: scale(1.05);
@@ -136,13 +186,6 @@
   #es-rc #es-rc-content .es-cross__desc {
     height: 7em;
   }
-}
-#es-rc #es-rc-content .es-footer {
-  background-color: #000000;
-}
-#es-rc #es-rc-content .es-footer__logo {
-  max-width: 200px;
-  padding: 16px;
 }
 #es-rc #es-rc-content .es-slider .swiper-button-prev:after,
 #es-rc #es-rc-content .es-slider .swiper-rtl .swiper-button-next:after,
