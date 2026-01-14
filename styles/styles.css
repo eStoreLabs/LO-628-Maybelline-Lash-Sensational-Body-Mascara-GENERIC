@@ -329,93 +329,6 @@
     background-attachment: scroll;
   }
 }
-#es-rc #es-rc-content .es-cross {
-  padding: 60px 16px;
-  background: linear-gradient(180deg, #dcbfb9 0%, #f4d0b8 41%, #96756e 100%);
-}
-#es-rc #es-rc-content .es-cross__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px 8px;
-  margin-top: 32px;
-}
-#es-rc #es-rc-content .es-cross__single {
-  max-width: 300px;
-  display: flex;
-  align-items: center;
-  flex-flow: column;
-}
-#es-rc #es-rc-content .es-cross__single:hover .es-cross__img {
-  transform: scale(1.05);
-}
-#es-rc #es-rc-content .es-cross__single:hover .es-cross__link {
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: inset 0 0 0 2px #000000;
-}
-#es-rc #es-rc-content .es-cross__packshot {
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-}
-#es-rc #es-rc-content .es-cross__img {
-  max-height: 100%;
-  transition: all 0.3s;
-  width: 80%;
-}
-#es-rc #es-rc-content .es-cross__name {
-  line-height: inherit;
-  font-size: 22px;
-  text-transform: uppercase;
-  font-family: "Barlow Condensed", sans-serif;
-  text-align: center;
-  margin-bottom: 8px;
-  font-weight: 700;
-}
-#es-rc #es-rc-content .es-cross__desc {
-  text-align: center;
-  font-size: 14px;
-  margin-bottom: 32px;
-}
-#es-rc #es-rc-content .es-cross__link {
-  margin: 0;
-  line-height: inherit;
-  font-size: 20px;
-  background: #000000;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 16px 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-family: "Barlow Condensed", sans-serif;
-  text-align: center;
-  display: inline-block;
-  transition: color 0.3s;
-  width: 100%;
-}
-@container es-rc-content (min-width: 768px) {
-  #es-rc #es-rc-content .es-cross__container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 32px 8px;
-    margin-top: 32px;
-  }
-  #es-rc #es-rc-content .es-cross__single {
-    min-width: 230px;
-    width: 30%;
-    text-shadow: unset;
-  }
-  #es-rc #es-rc-content .es-cross__desc {
-    height: 9em;
-  }
-}
-@container es-rc-content (min-width: 880px) {
-  #es-rc #es-rc-content .es-cross__desc {
-    height: 7em;
-  }
-}
 #es-rc #es-rc-content .es-slider {
   margin-bottom: -1px;
 }
@@ -604,6 +517,93 @@
   }
   #es-rc #es-rc-content .es-slide--2 {
     background: linear-gradient(90deg, #ffffff 0%, #b79f9b 100%);
+  }
+}
+#es-rc #es-rc-content .es-cross {
+  padding: 60px 16px;
+  background: linear-gradient(180deg, #dcbfb9 0%, #f4d0b8 41%, #96756e 100%);
+}
+#es-rc #es-rc-content .es-cross__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px 8px;
+  margin-top: 32px;
+}
+#es-rc #es-rc-content .es-cross__single {
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+#es-rc #es-rc-content .es-cross__single:hover .es-cross__img {
+  transform: scale(1.05);
+}
+#es-rc #es-rc-content .es-cross__single:hover .es-cross__link {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: inset 0 0 0 2px #000000;
+}
+#es-rc #es-rc-content .es-cross__packshot {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+#es-rc #es-rc-content .es-cross__img {
+  max-height: 100%;
+  transition: all 0.3s;
+  width: 80%;
+}
+#es-rc #es-rc-content .es-cross__name {
+  line-height: inherit;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+#es-rc #es-rc-content .es-cross__desc {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+#es-rc #es-rc-content .es-cross__link {
+  margin: 0;
+  line-height: inherit;
+  font-size: 20px;
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  text-align: center;
+  display: inline-block;
+  transition: color 0.3s;
+  width: 100%;
+}
+@container es-rc-content (min-width: 768px) {
+  #es-rc #es-rc-content .es-cross__container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px 8px;
+    margin-top: 32px;
+  }
+  #es-rc #es-rc-content .es-cross__single {
+    min-width: 230px;
+    width: 30%;
+    text-shadow: unset;
+  }
+  #es-rc #es-rc-content .es-cross__desc {
+    height: 9em;
+  }
+}
+@container es-rc-content (min-width: 880px) {
+  #es-rc #es-rc-content .es-cross__desc {
+    height: 7em;
   }
 }
 @media (prefers-reduced-motion: reduce) {
