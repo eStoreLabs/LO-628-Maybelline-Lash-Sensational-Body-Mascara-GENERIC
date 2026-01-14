@@ -94,16 +94,87 @@
                 <img class="es-lift__bg" src="./images/bg-lift.jpg" alt="">
             </div>
 
-            <div class="es-slider es-section">
-                <p class="es-section-title">Slider</p>
+            <div class="es-slider">
                 <!-- Slider main container -->
                 <div class="swiper es-swiper">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper es-swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide es-slide">Slide 1</div>
-                        <div class="swiper-slide es-slide">Slide 2</div>
-                        <div class="swiper-slide es-slide">Slide 3</div>
+                        <div class="swiper-slide es-slide es-slide--1">
+                            <div class="es-slide--1__right" style="background-image: url(./images/slide-1-bg.png)">
+                                <div class="es-slide--1__right__stat-wrapper">
+                                    <div class="es-slide--1__right__text">
+                                        <p class="es-slide--1__right__text--percent">93%</p>
+                                        <p class="es-slide--1__right__text--stat">Kobiet uważa, że rzęsy są widocznie
+                                            uniesione*</p>
+                                    </div>
+                                    <div class="es-slide--1__right__text">
+                                        <p class="es-slide--1__right__text--percent">83%</p>
+                                        <p class="es-slide--1__right__text--stat">Kobiet uważa, że rzęsy są pełne
+                                            objętości</p>
+                                    </div>
+                                </div>
+                                <p class="es-slide--1__right__disclaimer es-disclaimer">*Test konsumencki, 119 kobiet
+                                </p>
+                            </div>
+                            <div class="es-slide--1__left">
+                                <img class="es-slide--1__left__img" src="./images/slide-1-img.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide es-slide es-slide--2">
+                            <div class="es-ba__single">
+                                <p class="es-ba__name">Krótkie</p>
+                                <div class="es-ba__flex-wrapper">
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/short-before.jpg" alt="">
+                                        <p class="es-ba__text">Przed</p>
+                                    </div>
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/short-after.jpg" alt="">
+                                        <p class="es-ba__text">Po</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="es-ba__single">
+                                <p class="es-ba__name">Proste</p>
+                                <div class="es-ba__flex-wrapper">
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/straight-before.jpg" alt="">
+                                        <p class="es-ba__text">Przed</p>
+                                    </div>
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/straight-after.jpg" alt="">
+                                        <p class="es-ba__text">Po</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="es-ba__single">
+                                <p class="es-ba__name">Podkręcone</p>
+                                <div class="es-ba__flex-wrapper">
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/curved-before.jpg" alt="">
+                                        <p class="es-ba__text">Przed</p>
+                                    </div>
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/curved-after.jpg" alt="">
+                                        <p class="es-ba__text">Po</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="es-ba__single">
+                                <p class="es-ba__name">Rzadkie</p>
+                                <div class="es-ba__flex-wrapper">
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/thin-before.jpg" alt="">
+                                        <p class="es-ba__text">Przed</p>
+                                    </div>
+                                    <div class="es-ba__img-wrapper">
+                                        <img class="es-ba__img" src="./images/thin-after.jpg" alt="">
+                                        <p class="es-ba__text">Po</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- If we need navigation buttons -->
@@ -118,8 +189,8 @@
                         </div>
                     </div>
 
-                    <!-- If we need scrollbar -->
-                    <div class="es-swiper-scrollbar"></div>
+                    <!-- If we need pagination -->
+                    <div class="es-swiper-pagination es-slider__pagination"></div>
                 </div>
             </div>
 
@@ -180,7 +251,6 @@
 
         </div>
     </div>
-    <script src="./scripts/click.js"></script>
     <script src="./scripts/swiper-bundle.min.js"></script>
     <script src="./scripts/swiperInit.js"></script>
 </body>

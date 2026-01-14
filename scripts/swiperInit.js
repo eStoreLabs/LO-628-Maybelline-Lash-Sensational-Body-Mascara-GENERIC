@@ -7,6 +7,11 @@
     direction: "horizontal",
     loop: true,
     autoHeight: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
+    },
 
     // If we need pagination
     pagination: {

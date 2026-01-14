@@ -475,6 +475,7 @@ $media-breakpoint-xl: 1200px;
   // Swiper styles, reset some of the inherent ones
 
   .es-slider {
+    margin-bottom: -1px; // fix the gap in the slider
     .swiper-button-prev:after,
     .swiper-rtl .swiper-button-next:after,
     .swiper-button-next:after,
@@ -489,6 +490,8 @@ $media-breakpoint-xl: 1200px;
       justify-content: unset;
       margin: 0;
       display: unset;
+      height: 64px;
+      padding: 15px;
     }
     &__buttons {
       display: flex;
@@ -497,12 +500,164 @@ $media-breakpoint-xl: 1200px;
       &--prev__img,
       &--next__img {
         display: block;
-        width: 32px;
-        height: 32px;
         margin: 0;
       }
       &--prev__img {
         transform: rotate(180deg);
+      }
+    }
+    &__pagination {
+      position: absolute;
+      left: 50%;
+      width: max-content;
+      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
+    }
+    @container es-rc-content (min-width: 660px) {
+      &__buttons {
+        position: absolute;
+        top: 50%;
+      }
+      &__pagination {
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+    }
+  }
+
+  .es-slide {
+    &--1 {
+      &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        height: 100%;
+        padding: $px-M;
+        background-size: cover;
+        background-position: center;
+
+        &__stat-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: $px-L;
+          margin-top: $px-XL;
+          max-width: 320px;
+        }
+        &__text {
+          display: flex;
+          flex-direction: column;
+          gap: $px-S;
+          &--percent {
+            @include header;
+            font-size: clamp(3.25rem, 2.2926rem + 4.2553vw, 5.75rem);
+            line-height: 1;
+          }
+          &--stat {
+            @include header;
+            font-size: clamp(1.259375rem, 0.3245rem + 2.216vw, 2.125rem);
+          }
+        }
+        &__disclaimer {
+          margin-top: $px-XL;
+        }
+      }
+    }
+    &--2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: $gradient;
+      .es-ba {
+        &__single {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: $px-M;
+          text-shadow: none;
+          padding: $px-M;
+
+          &:nth-child(odd) {
+            background-color: $color-bg;
+            .es-ba__name {
+              color: $color-accent;
+            }
+          }
+
+          &:nth-child(even) {
+            background-color: $color-accent;
+          }
+        }
+
+        &__name {
+          @include header;
+          font-size: 34px;
+          line-height: 1;
+        }
+        &__flex-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: $px-M;
+        }
+        &__img-wrapper {
+          position: relative;
+          transition: $transition;
+          overflow: hidden;
+        }
+        &__img {
+          transition: $transition;
+          object-fit: cover;
+          object-position: center;
+          &:hover {
+            scale: $scale-2;
+          }
+        }
+        &__text {
+          @include header;
+          font-weight: $fw-medium;
+          text-align: left;
+          font-size: 32px;
+          padding: $px-S;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    @container es-rc-content (min-width: 660px) {
+      &--1 {
+        display: flex;
+        flex-direction: row-reverse;
+        &__left,
+        &__right {
+          width: 50%;
+        }
+        &__left {
+          &__img {
+            object-fit: cover;
+            height: 100%;
+            object-position: center;
+          }
+        }
+      }
+    }
+    @container es-rc-content (min-width: 900px) and (max-width: 1260px) {
+      &--2 {
+        .es-ba__single {
+          flex: 1 1 0;
+        }
+      }
+    }
+    @container es-rc-content (min-width: 980px) {
+      &--1 {
+        height: 100%;
+      }
+      &--2 {
+        background: linear-gradient(90deg, $color-bg 0%, $color-accent 100%);
       }
     }
   }
