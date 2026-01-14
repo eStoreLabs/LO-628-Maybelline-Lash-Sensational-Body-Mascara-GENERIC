@@ -83,7 +83,8 @@ $media-breakpoint-xl: 1200px;
     margin: 0;
   }
 
-  img {
+  img,
+  video {
     width: 100%;
     display: block;
     margin: 0 auto;
@@ -557,6 +558,21 @@ $media-breakpoint-xl: 1200px;
       }
       &--2 {
         background: linear-gradient(90deg, $color-bg 0%, $color-accent 100%);
+      }
+    }
+  }
+
+  .es-video {
+    padding: $px-XL;
+    background-color: $color-accent;
+    &__video {
+      aspect-ratio: 16/9;
+      width: 100%;
+      margin: auto;
+    }
+    @container es-rc-content (min-width: 660px) {
+      &__video {
+        width: 80%;
       }
     }
   }

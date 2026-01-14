@@ -26,7 +26,8 @@
 #es-rc #es-rc-content p {
   margin: 0;
 }
-#es-rc #es-rc-content img {
+#es-rc #es-rc-content img,
+#es-rc #es-rc-content video {
   width: 100%;
   display: block;
   margin: 0 auto;
@@ -517,6 +518,20 @@
   }
   #es-rc #es-rc-content .es-slide--2 {
     background: linear-gradient(90deg, #ffffff 0%, #b79f9b 100%);
+  }
+}
+#es-rc #es-rc-content .es-video {
+  padding: 32px;
+  background-color: #b79f9b;
+}
+#es-rc #es-rc-content .es-video__video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  margin: auto;
+}
+@container es-rc-content (min-width: 660px) {
+  #es-rc #es-rc-content .es-video__video {
+    width: 80%;
   }
 }
 #es-rc #es-rc-content .es-cross {
